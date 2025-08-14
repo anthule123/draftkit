@@ -4,6 +4,7 @@ import style from '@/css/components/article.module.css';
 import path from "path";
 import Article from '../../components/Article';
 import { getAllDocPaths2 } from '../../blog/[...slug]/getAllDocPaths';
+import ArticleBook from '../../components/ArticleBook';
 
 
 type Params = {
@@ -37,14 +38,14 @@ export default async function BlogPage(
         if (lang==='en') {
             const {default: PostEn, metadata} = await import(`@/content/blogen/${slugPath}.mdx`)
             return (
-                <article className={style.article}>
+                <ArticleBook className={style.article}>
                     <PostEn/>
-                </article>
+                </ArticleBook>
             )
         }  
-        return (<article className={style.article}>
+        return (<ArticleBook className={style.article}>
             <Post/>
-        </article>) 
+        </ArticleBook>) 
     }
     catch(error){
         console.error('Error loading this blog post') 

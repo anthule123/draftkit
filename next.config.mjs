@@ -7,7 +7,6 @@ import remarkMermaid from "remark-mermaidjs";
 import rehypeShiki from "@shikijs/rehype";
 import remarkMath from 'remark-math'
 import remarkGfm from 'remark-gfm'
-import remarkFootnotes from 'remark-footnotes'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -26,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFootnotes,remarkGfm, remarkMath, remarkMermaid],
+    remarkPlugins: [remarkGfm, remarkMath, remarkMermaid],
     rehypePlugins: [
       rehypeTypst,
       [
