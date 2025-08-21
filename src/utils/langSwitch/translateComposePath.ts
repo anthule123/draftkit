@@ -9,8 +9,8 @@ export async function translateComposePath(
   const slugParts = compose.slug.split('/')
 
   // const decodedSlugParts = slugParts.map(decodeURIComponent);
-
-  let nameImport = `/jsons/${bigRoute}/${docsDiv}`
+  const basePath = process.env.NODE_ENV === 'production' ? '/draftkit' : '';  
+  let nameImport = basePath + `/jsons/${bigRoute}/${docsDiv}`
   const newSlugParts: string[] = [] 
 
   // Lặp từng phần slug
