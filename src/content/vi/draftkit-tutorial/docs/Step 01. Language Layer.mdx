@@ -1,0 +1,51 @@
+
+# Language layer 
+
+- Khởi tạo project Next-app
+- Cấu trúc 
+``` 
+src --app
+    |    |--[lang]--learn--docs--[...slug]
+    |        |          |--[versioned_docs]--[...slug]
+    |                   |--page.tsx
+    |        |------draftkit-tutorial--docs--[...slug]     
+    |        |                        |-- [versioned_docs]--[...slug]
+    |        |------curation--docs--[...slug]
+    |                    |-----[versioned_docs]--[...slug]
+    |
+    |--components
+    |         |--LangSwitcher.tsx 
+    |         |--Article.tsx 
+    |         |--ILink.tsx 
+    |--content (nơi chứa các file .mdx)
+    |    |--vi-- learn--docs--Động vật--Cá--Cá chép.mdx
+    |    |   |      |--versioned_docs
+    |    |   |
+    |    |   |-- draftkit-tutorial--docs 
+    |    |   |       |--versioned_docs
+    |    |   |
+    |    |   |--curation--docs
+    |    |    
+    |    |--en--learn--docs--Animals--Fish--Carp.mdx 
+    |    |   
+    |    |--trans--learn--docs--Animals--Fish--Carp.mdx 
+    |                 |          |          |          
+    |                 |         name.ts   name.ts  
+    |                 |--versioned_docs       
+    |--css 
+    |--scss 
+``` 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

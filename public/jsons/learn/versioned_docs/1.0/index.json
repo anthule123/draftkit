@@ -1,0 +1,29 @@
+[
+    {
+        "locale": "vi",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Animals": "Động vật",
+          "1. Intro": "1. Intro",
+          "2. Books": "2. Books",
+          "3. Puzzles": "3. Puzzles",
+          "Collections": "Sưu tầm",
+          "Trials": "Thử nghiệm"
+        }
+    },
+      {
+        "locale": "en",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Animals": "Animals",
+          "1. Intro": "1. Intro",
+          "2. Books": "2. Books",
+          "3. Puzzles": "3. Puzzles",
+          "Collections": "Collections",
+          "Trials": "Trials"
+        }
+      }
+    ]
+    

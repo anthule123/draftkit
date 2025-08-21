@@ -1,0 +1,22 @@
+[
+    {
+        "locale": "vi",
+        "name": "2. Books",
+        "mapFiles": {
+          "Bees and Spiders": "Ong và Nhện"
+        },
+        "mapFolders": {
+          
+        }
+    },
+      {
+        "locale": "en",
+        "name": "2. Books",
+        "mapFiles": {
+          "Bees and Spiders": "Bees and Spiders"
+        },
+        "mapFolders": {
+        }
+      }
+    ]
+    

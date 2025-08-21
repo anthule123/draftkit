@@ -1,0 +1,23 @@
+[
+    {
+        "locale": "vi",
+        "name": "1. Intro",
+        "mapFiles": {
+            "0. Overview": "0. Tổng quan"
+        },
+        "mapFolders": {
+          "Some features": "Vài tính năng"
+        }
+    },
+      {
+        "locale": "en",
+        "name": "1. Intro",
+        "mapFiles": {
+             "0. Overview": "0. Overview"
+        },
+        "mapFolders": {
+         "Some features": "Some Features"
+        }
+      }
+    ]
+    

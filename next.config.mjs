@@ -1,12 +1,7 @@
 import createMDX from "@next/mdx";
-import rehypeStringify from 'rehype-stringify'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeTypst from "@myriaddreamin/rehype-typst";
-import remarkMermaid from "remark-mermaidjs";
 import rehypeShiki from "@shikijs/rehype";
 import remarkMath from 'remark-math'
-import remarkGfm from 'remark-gfm'
+import rehypeTypst from "@myriaddreamin/rehype-typst";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm, remarkMath, remarkMermaid],
+    remarkPlugins: [remarkMath, ],
     rehypePlugins: [
       rehypeTypst,
       [

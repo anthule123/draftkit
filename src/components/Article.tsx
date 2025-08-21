@@ -1,0 +1,81 @@
+'use client'
+import React, { useEffect, useRef, useState, ReactNode } from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
+import style from '@/css/components/article.module.css';
+import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
+import GiscusComments from './GiscusComments';
+
+type Heading = {
+  id: string;
+  text: string;
+  level: number;
+};
+
+interface ArticleProps extends React.HTMLAttributes<HTMLElement> {
+  children: ReactNode;
+}
+
+const Article: React.FC<ArticleProps> = ({ children, className, ...props }) => {
+  const articleRef = useRef<HTMLElement>(null);
+  const [headings, setHeadings] = useState<Heading[]>([]);
+  useEffect(() => {
+    if (!articleRef.current) return;
+
+    const headingElements = articleRef.current.querySelectorAll('h1, h2, h3');
+
+    const newHeadings: Heading[] = [];
+    headingElements.forEach((el, idx) => {
+      if (!el.id) {
+        el.id = `heading-${idx}`;
+      }
+      newHeadings.push({
+        id: el.id,
+        text: el.textContent || '',
+        level: Number(el.tagName.charAt(1)),
+      });
+    });
+
+    setHeadings(newHeadings);
+  }, [children]); // đảm bảo cập nhật khi nội dung thay đổi
+
+  return (
+    <div>
+        <PanelGroup autoSaveId="example" direction="horizontal">
+                    <Panel defaultSize={80}>
+                    <article ref={articleRef} 
+                    className={className} {...props}>
+                        {children}
+                    </article>
+                    </Panel>
+                  <PanelResizeHandle
+                     className={`resizeHandler
+                       ${style.tocShow}`}
+                 />
+                <Panel className={`${style.tocContainer} ${style.tocShow}`}>
+                {headings.length > 0 && <div className={style.toc}>{myToc(headings)}</div>}
+                </Panel>
+         </PanelGroup>
+         <GiscusComments />
+        <LanguageSwitcher />
+    </div>
+  );
+};
+
+export default Article; 
+
+export function myToc(headings: Heading[]) {
+  return (
+    <nav>
+      <h3>Mục lục bài viết</h3>
+      <ul>
+        {headings.map(({ id, text, level }) => (
+          <li key={id} style={{ marginLeft: (level - 1) * 10 }}>
+            <a href={`#${id}`}>
+              {text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}

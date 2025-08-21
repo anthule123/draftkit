@@ -1,0 +1,19 @@
+[
+    {
+        "locale": "vi",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Animals": "Động vật"
+        }
+    },
+      {
+        "locale": "en",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Animals": "Animals"
+        }
+      }
+    ]
+    

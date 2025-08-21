@@ -1,3 +1,4 @@
+@charset "UTF-8";
 a,
 button, details {
   font-family: var(--font-inter);
@@ -236,12 +237,6 @@ article img {
   grid-template-columns: 280px auto;
 }
 
-body,
-html {
-  overflow-x: auto;
-  max-width: 5000px;
-}
-
 details {
   border: 1px solid green;
   cursor: pointer;
@@ -276,4 +271,15 @@ details {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: pink;
+}
+
+.grid {
+  background: white;
+  width: 90vw;
+  max-width: 500px;
+  display: grid;
+  /* Chia nhiều cột khi đủ chỗ, thu hẹp thì dồn xuống dòng */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+  gap: 1rem; /* Thêm khoảng cách giữa các item nếu muốn */
 }

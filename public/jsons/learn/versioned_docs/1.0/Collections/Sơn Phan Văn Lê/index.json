@@ -1,0 +1,27 @@
+[
+    {
+        "locale": "vi",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Discourse": "Diễn Ngôn",
+          "Neurodiversity": "Đa dạng thần kinh",
+          "The Youthfulness of Gay Male Love in Popular Culture": 
+          "Sự non trẻ của tình yêu đồng tính nam trong văn hóa đại chúng",
+          "Psychological Therapy": "Trị Liệu tâm lý"
+        }
+    },
+      {
+        "locale": "en",
+        "name": "",
+        "mapFiles": {},
+        "mapFolders": {
+          "Discourse":  "Discourse",
+          "Neurodiversity": "Neurodiversity",
+          "The Youthfulness of Gay Male Love in Popular Culture": 
+          "The Youthfulness of Gay Male Love in Popular Culture", 
+          "Psychological Therapy": "Psychological Therapy"
+        }
+      }
+    ]
+    

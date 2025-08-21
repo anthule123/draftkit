@@ -1,0 +1,73 @@
+'use client'
+import Link from "next/link";
+
+import { usePathname } from "next/navigation";
+import {  useState } from "react";
+import style from '@/css/components/TreeView.module.css';
+
+import { TreeNode } from "@/utils/types/TreeNode";
+import { GREEN } from "@/utils/constant";
+
+export default function TreeView({
+    data, 
+}: {data: TreeNode,
+}){
+    const pathname = usePathname();
+    // Strip language prefix
+    const decodedPath = (() => {
+        const segments = decodeURI(pathname).split('/');            
+        // Return the original path if no language prefix
+        return decodeURI(pathname);
+      })();
+
+    const isPathChild = decodedPath.startsWith(decodeURI(data.path)) 
+    const [isOpen, setIsOpen] = useState(isPathChild); 
+    const isActive = decodedPath.replace(/\/$/, "")
+                     === decodeURI(data.path).replace(/\/$/, "")
+                    && data.isMdxFile;
+    // console.log({
+    // pathname: decodeURI(pathname),
+    // dataPath: decodeURI(data.path),
+    // isActive: decodeURI(pathname) === decodeURI(data.path),
+    // });
+    if(data.color!==GREEN){
+        return <></>
+    }
+    if (data.isMdxFile) return (
+        <div className={`${isActive? `${style.active}`: '' } ${style.item}`}>
+            <Link href = {data.path}
+> {data.name} </Link>
+        </div>
+    )
+    if(data.name==='') return (
+        <ChildrenShow data = {data}/>
+    )
+    else return (
+        <div className="">
+            <details open = {isOpen}
+                    onToggle={(e) => setIsOpen(e.currentTarget.open)}
+                    className=""
+            >
+                <summary className={`${style.item}`}> {data.name} </summary>
+                <ChildrenShow data = {data}/>
+            </details>
+
+        </div>
+    )
+}
+
+export function ChildrenShow({data}:{data: TreeNode}){
+    return  (
+        <div>
+            {data.children && 
+            <div>
+                {data.children.map((child, index) => (
+                <TreeView key={index} 
+                data={child} />
+                ))}
+            </div>
+            }
+           
+        </div>
+    )
+}

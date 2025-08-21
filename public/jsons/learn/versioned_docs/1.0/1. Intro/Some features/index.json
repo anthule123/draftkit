@@ -1,0 +1,24 @@
+[
+    {
+        "locale": "vi",
+        "name": "1. Intro",
+        "mapFiles": {
+            "1. Markdown": "1. Markdown",
+            "5. P5js art": "5. P5js đồ họa"
+        },
+        "mapFolders": {
+         
+        }
+    },
+      {
+        "locale": "en",
+        "name": "1. Intro",
+        "mapFiles": {
+             "5. P5js art": "5. P5js art"
+        },
+        "mapFolders": {
+         
+        }
+      }
+    ]
+    
