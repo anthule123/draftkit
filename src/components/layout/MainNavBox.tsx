@@ -12,11 +12,11 @@ export default function MainNavBox({
         >
             <ul>                   
                 <li>
-                    <ILink href='/learn'>{dict?.bigRoute.learn}</ILink>
+                    <ILink href='/learn/docs'>{dict?.bigRoute.learn}</ILink>
                 </li>
-                <li><ILink href='/draftkit-tutorial'>{dict?.bigRoute["draftkit-tutorial"]}</ILink></li>
-                <li><ILink href='/curation'>{dict?.bigRoute.curation}</ILink></li>
-                <li><ILink href='/analysis'>{dict?.bigRoute.analysis}</ILink></li>
+                <li><ILink href='/draftkit-tutorial/docs'>{dict?.bigRoute["draftkit-tutorial"]}</ILink></li>
+                <li><ILink href='/curation/docs'>{dict?.bigRoute.curation}</ILink></li>
+                <li><ILink href='/analysis/docs'>{dict?.bigRoute.analysis}</ILink></li>
             </ul>
         </nav>
     )

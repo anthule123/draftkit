@@ -1,5 +1,6 @@
 import TimelineList from "@/components/versionManage/TimelineList";
 import VersionFilter from "@/components/versionManage/VersionFilter";
+import VersionFilterSimple from "@/components/versionManage/VersionFilterSimple";
 import { getDictionary } from "@/utils/dictionaries";
 
 export default async function Page( {params}: {
@@ -11,16 +12,10 @@ export default async function Page( {params}: {
         const dict = await getDictionary(locale);
     return (
         <div className="center">
-          <VersionFilter lang={locale}
-                       bigRoute={`analysis`}
-                       docsDivs = {docsDivs}     
-                       dict={dict} 
-          >
-          <TimelineList lang={locale}
-                       bigRoute={`analysis`}
-                       docsDivs = {docsDivs}
-          />
-          </VersionFilter>
+          <VersionFilterSimple lang={locale}
+                            bigRoute='analysis'
+                            docsDivs = {docsDivs}   
+                            dict={dict}  />
         </div>
 
     )

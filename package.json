@@ -1,5 +1,5 @@
 {
-  "name": "doctea",
+  "name": "draftkit",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,11 +7,6 @@
     "watch:sass": "sass --no-source-map --watch src/scss:src/css",
     "dev:next": "next dev -p 3122",
     "dev": "npm-run-all --parallel watch:sass dev:next ",
-    
-    "dev:turbo": "next dev -p 3122 --turbopack",
-    "dev:turbo:sass": "npm-run-all --parallel watch:sass dev:turbo",
-    "dev:fast": "taskset -c 5-10 npm run dev:turbo:sass",
-    
     "build": "next build ",
     "start": "next start",
     "lint": "eslint"
@@ -24,6 +19,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@myriaddreamin/rehype-typst": "^0.6.1-rc2",
+    "@next/bundle-analyzer": "^15.5.2",
     "@next/mdx": "^15.5.0",
     "@shikijs/rehype": "^3.11.0",
     "@types/mdx": "^2.0.13",
