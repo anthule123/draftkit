@@ -3,17 +3,17 @@ import rehypeShiki from "@shikijs/rehype";
 import remarkMath from 'remark-math'
 import rehypeTypst from "@myriaddreamin/rehype-typst";
 
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */ 
+const isGithubPages = process.env.NODE_ENV === 'production';
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === "production" ?
-   "/draftkit" : "",
+  assetPrefix: isGithubPages ?"/draftkit" : "",
 };
 
-if (process.env.NODE_ENV === "production") {
+if (isGithubPages) {
    nextConfig.output = "export";
-  nextConfig.images = { unoptimized: true };
+  nextConfig.images = { unoptimized: false };
   nextConfig.basePath = "/draftkit";
 }
 
