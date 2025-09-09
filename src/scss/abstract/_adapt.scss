@@ -1,0 +1,49 @@
+// Breakpoint variables
+$breakpoint-mobile: 700px;
+$breakpoint-large: 1440px;
+$breakpoint-mini: 300px;
+
+//Breakpoint mixins
+@mixin mobile{
+    @media (max-width:  
+    #{$breakpoint-mobile}){
+        @content;
+    }
+} 
+@mixin desktop{
+    @media (min-width:  
+    #{$breakpoint-mobile + 1px}){
+        @content;
+    }
+} 
+@mixin large-desktop{
+    @media (min-width:  
+    #{$breakpoint-large}){
+        @content;
+    }
+}
+@mixin mini{
+    @media (max-width: #{$breakpoint-mini}){
+        @content;
+    }
+}
+@mixin responsive{
+    @include mobile{
+       // background: pink; 
+        .mobile{
+          display: block;
+        }
+        .desktop{
+          display: none;
+        }
+     }
+     @include desktop{
+        //  background: cyan;
+         .mobile{
+             display: none;
+           }
+           .desktop{
+             display: block;
+           }
+     }
+}

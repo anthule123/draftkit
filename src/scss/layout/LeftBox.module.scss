@@ -1,0 +1,37 @@
+@use '../abstract/display' as *;
+@use '../abstract/adapt' as *;
+
+
+.hamburger{
+    position: relative;
+    z-index: 4;
+}
+.content{
+    position: absolute;  
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    width: 300;
+    @include mini{
+        width: 200;
+    }
+   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    z-index: 3;
+    scroll-behavior: auto;
+    pointer-events: none; 
+    visibility: hidden;
+    .layout{ 
+        padding: 10px;
+        padding-top: 80px;
+        a,li{
+            display: block;
+            line-height: 2.3;
+        }
+    }
+}
+
+.content.active{
+    visibility: visible;    
+    pointer-events: auto;
+}

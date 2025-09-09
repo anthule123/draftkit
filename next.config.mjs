@@ -18,13 +18,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const withMDX = createMDX({
-  extension: /\.mdx?$/,
+  // extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkMath, ],
+    remarkPlugins: ['remark-math', 'remark-gfm' ],
     rehypePlugins: [
-      rehypeTypst,
+      "@myriaddreamin/rehype-typst",
       [
-        rehypeShiki,
+        "@shikijs/rehype",
         {
           theme: "dark-plus",
         },

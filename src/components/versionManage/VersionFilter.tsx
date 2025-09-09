@@ -1,18 +1,21 @@
 
 'use client'
 
+import { Dictionary, getDictionary } from '@/utils/dictionaries';
 import { useEffect, useState } from 'react'
 export default function VersionFilter(
-    {
+    {   dict,
         lang,bigRoute,docsDivs,
         children
     }:{
+        dict: Dictionary,
         lang: string,
         bigRoute: string,
         docsDivs: string[],
         children: React.ReactNode
     }
 ){
+
     const [selectedVersion, setSelectedVersion] = useState('docs')
     useEffect(() => {
         const allElements = document.querySelectorAll('[data-docs-version]')

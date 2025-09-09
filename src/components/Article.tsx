@@ -1,9 +1,10 @@
 'use client'
 import React, { useEffect, useRef, useState, ReactNode } from 'react';
-import LanguageSwitcher from './LanguageSwitcher';
-import style from '@/css/components/article.module.css';
+import LanguageSwitcher from './langSwitch/LanguageSwitcher';
+import style from '@/css/components/Article.module.css';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import GiscusComments from './GiscusComments';
+import FontSwitcher from './FontSwitcher';
 
 type Heading = {
   id: string;
@@ -40,6 +41,7 @@ const Article: React.FC<ArticleProps> = ({ children, className, ...props }) => {
 
   return (
     <div>
+        <FontSwitcher/>
         <PanelGroup autoSaveId="example" direction="horizontal">
                     <Panel defaultSize={80}>
                     <article ref={articleRef} 
@@ -56,7 +58,7 @@ const Article: React.FC<ArticleProps> = ({ children, className, ...props }) => {
                 </Panel>
          </PanelGroup>
          <GiscusComments />
-        <LanguageSwitcher />
+        {/* <LanguageSwitcher />  */}
     </div>
   );
 };

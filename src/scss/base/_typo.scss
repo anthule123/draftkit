@@ -17,10 +17,13 @@ h6 {
 p,
 ul,
 li ,span{
-    font-family: var(--font-garamond);
+    // font-family: var(--font-libertinus-serif);
+    //font-family: var(--font-garamond);
+    // font-family: var(--font-libertinus-serif);
+    font-family: var(--content-font);
 }
 details a, details{
-    font-family: var(--font-garamond);
+    font-family: var(--content-font);
     font-size: 1.1rem;
     font-weight: 400;
 }
@@ -30,6 +33,7 @@ h1 {
     font-size: 2em;
     font-weight: bold;
     margin: 0.67em 0;
+    line-height: 0.8;
 }
 
 h2 {

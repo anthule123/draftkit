@@ -1,0 +1,16 @@
+{
+    "index": {
+      "home-page": "Trang chủ"
+    },
+      "bigRoute" :{
+        "learn": "Học tập",
+        "draftkit-tutorial": "Hướng dẫn sử dụng",
+        "curation": "Sưu tầm",
+        "analysis": "Phân tích"
+    },
+        "versionManage": {
+          "introLink": "Đường link tới phiên bản này",
+          "choose": "Chọn phiên bản"
+
+    }
+}

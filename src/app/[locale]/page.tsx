@@ -1,6 +1,8 @@
 // You now have access to the current locale
 
 import { BigRouteCard } from "@/components/BigRouteCard"
+import { bigRoutes } from "@/utils/langSwitch/ComposePath"
+import { Niconne } from "next/font/google"
 
 const bigRouteSet = [
   {
@@ -18,6 +20,11 @@ const bigRouteSet = [
     niceName: 'Sưu tầm',
     enNiceName: 'Curation'
   },
+  {
+    bigRoute: 'analysis',
+    niceName: 'Phân tích',
+    enNiceName: 'Analyses'
+  }
 
 ]
 export default async function Page({
@@ -33,6 +40,7 @@ export default async function Page({
               item.bigRoute,
               locale==='vi'? item.niceName: item.enNiceName
             ))}
+           
           </div>
         </div>
     )

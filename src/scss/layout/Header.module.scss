@@ -1,0 +1,81 @@
+@use '../abstract/adapt' as *;
+@use '../abstract/colors';
+@use '../abstract/display' as *;
+
+//layer1: adapt
+.headerContainer{
+    position: relative;
+    @include responsive;
+    border-bottom: 2px solid colors.$primary;
+}
+//layer2: layout 
+
+.desktop{ 
+    padding: 0 40px;
+    .layout{
+        max-width: 900px;
+        @include fillParent;
+        @include gridRowFlow;
+        gap: 30px;
+    }
+}
+//layout 2b: Layout for mobile 
+.mobile{
+    height: 80px;
+    padding: 0 10px;
+    .layout{
+        @include fillParent;
+        @include gridRowFlow;
+    }
+}
+//Layer 3: Make Box ------------------------------
+.desktop{
+   
+    .rightBox{
+        @include center;
+    } 
+    .mainNav{
+        @include fillParent;
+        gap: 50px;
+        @include gridRowFlow;
+        > ul{
+            @include gridRowFlow;  
+            gap: 20px;
+        }  
+    }
+}
+.mobile{
+    .rightBox, .leftBox{
+        @include gridRowFlow;
+        gap: 20px;
+        > ul{
+            @include gridRowFlow;  
+            gap: 10px;
+        }
+    } 
+}
+//layer 4: Typo 
+.headerContainer{
+    li{
+        list-style-type: none;
+        @include center;   
+    }
+    a{
+        text-decoration: none; 
+        color: black;
+        font-size: 1rem;
+        font-weight: 600; 
+        line-height: 1.2;
+        &:hover{
+            color: colors.$primary;
+
+        }
+    }
+}
+
+.topRight{
+    position: absolute;
+    right: 10px;
+    align-self: center;
+    z-index : 3;
+}

@@ -1,0 +1,70 @@
+@use '../abstract/colors' as colors;
+@use '../abstract/display';
+@use '../abstract/adapt';
+
+@mixin articleDeco{
+    max-width: 6.5in;
+    margin: auto;
+    padding: 2rem 1rem;
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    pre {
+        // padding: 1.5rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+    blockquote {
+        border-left: 4px solid grey;
+        padding-left: 1rem;
+        font-style: italic;
+        margin: 1.5rem 0;
+    }
+    h1,h2,h3{
+        scroll-margin-top: 100px;
+    }
+}
+.article {
+    @include articleDeco;
+    .forPdf{
+        display: none;    
+    }
+    
+}
+.book{
+    @include articleDeco();
+}
+.container{
+    @include display.center;
+    @include adapt.desktop{
+        display: grid; 
+        grid-template-columns: auto auto;
+    }
+}
+.tocContainer{
+    position: relative;
+}
+.toc{
+   position: fixed;
+}
+.tocShow{
+    @include adapt.mobile{
+        display: none;
+    }
+}

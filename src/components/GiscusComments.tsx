@@ -4,8 +4,8 @@ export default function GiscusComments() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'anthule123/draft-kit');
-    script.setAttribute('data-repo-id', 'R_kgDONb5ktA');
+    script.setAttribute('data-repo', 'anthule123/draftkit');
+    script.setAttribute('data-repo-id', "R_kgDONb5ktA");
     script.setAttribute('data-category', 'General');
     script.setAttribute('data-category-id', 'DIC_kwDONb5ktM4CtKzH');
     script.setAttribute('data-mapping', 'pathname');

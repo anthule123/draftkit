@@ -1,4 +1,7 @@
-export const bigRoutes = ['curation', 'draftkit-tutorial', 'learn']
+export const bigRoutes = [
+  'curation', 'draftkit-tutorial', 'learn',
+  'analysis'
+]
 import path from 'path'
 import { LocaleFolderMapping } from '@/utils/langSwitch/LocaleFolderMaping'
 

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.gridRowFlow {
+  display: grid;
+  grid-auto-flow: column; /* Dồn item theo hàng ngang */
+  justify-content: space-between;
+}
+
+.article {
+  max-width: 6.5in;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+.article h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.article h2 {
+  font-size: 1.875rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.article p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.article pre {
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.article blockquote {
+  border-left: 4px solid grey;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.article h1, .article h2, .article h3 {
+  scroll-margin-top: 100px;
+}
+.article .forPdf {
+  display: none;
+}
+
+.book {
+  max-width: 6.5in;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+.book h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.book h2 {
+  font-size: 1.875rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.book p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.book pre {
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.book blockquote {
+  border-left: 4px solid grey;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.book h1, .book h2, .book h3 {
+  scroll-margin-top: 100px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 701px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+.tocContainer {
+  position: relative;
+}
+
+.toc {
+  position: fixed;
+}
+
+@media (max-width: 700px) {
+  .tocShow {
+    display: none;
+  }
+}

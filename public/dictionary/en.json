@@ -1,0 +1,15 @@
+{
+    "index": {
+        "home-page": "Home"
+    },
+    "bigRoute" :{
+        "learn": "Learn",
+        "draftkit-tutorial": "Draftkit Tutorial",
+        "curation": "Curation",
+        "analysis": "Analysis"
+    }, 
+    "versionManage": {
+        "introLink": "Link to this version",
+        "choose": "Choose version"
+    }
+}

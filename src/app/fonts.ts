@@ -1,4 +1,5 @@
-import { EB_Garamond, Lora, Merriweather, Inter } from "next/font/google";
+import { EB_Garamond, Lora, Merriweather,
+   Inter, Libertinus_Math, Libertinus_Serif } from "next/font/google";
 
 export const garamond = EB_Garamond({
   subsets: ["latin", "vietnamese"],
@@ -30,3 +31,15 @@ export const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
+export const libertinus_math = Libertinus_Math({
+  subsets:["latin", "vietnamese"],
+  weight: "400",
+  variable: "--font-libertinus-math",
+  display: "swap"
+}) 
+export const libertinus_serif = Libertinus_Serif({
+  subsets:["latin", "vietnamese"],
+  weight: ["400", "600", "700"],
+  variable: "--font-libertinus-serif",
+  display: "swap"
+})

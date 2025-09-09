@@ -1,4 +1,4 @@
-import style from '@/css/components/article.module.css';
+import style from '@/css/components/Article.module.css';
 import Article from '@/components/Article';
 
 export default async function SlugPageVersionedDocs({

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.gridRowFlow {
+  display: grid;
+  grid-auto-flow: column; /* Dồn item theo hàng ngang */
+  justify-content: space-between;
+}
+
+.hamburger {
+  position: relative;
+  z-index: 4;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  width: 300;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  scroll-behavior: auto;
+  pointer-events: none;
+  visibility: hidden;
+}
+@media (max-width: 300px) {
+  .content {
+    width: 200;
+  }
+}
+.content .layout {
+  padding: 10px;
+  padding-top: 80px;
+}
+.content .layout a, .content .layout li {
+  display: block;
+  line-height: 2.3;
+}
+
+.content.active {
+  visibility: visible;
+  pointer-events: auto;
+}

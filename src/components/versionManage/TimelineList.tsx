@@ -1,4 +1,5 @@
 
+import { getDictionary } from "@/utils/dictionaries";
 import { getAllDocPaths } from "@/utils/folderBased/getAllDocPaths";
 import { ArticleMetadata } from "@/utils/types/ArticleMetadata";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export default async function TimelineList(
         docsDivs: string[]
     }
 ){
+    const dict = await getDictionary(lang);
     const cardVersions : CardVersion[] = [];
     for(const docsDiv of docsDivs){
         const nodes = await getAllDocPaths(`src/content/${lang}/${bigRoute}/${docsDiv}`);
@@ -45,7 +47,7 @@ export default async function TimelineList(
         <div>
             {cardVersions.map((cardVersion) =>  
             <div data-docs-version = {cardVersion.docsDiv} key={cardVersion.docsDiv}> 
-                <nav>Đường link tới phiên bản này 
+                <nav>{dict?.versionManage.introLink}:  
                     <Link href={`/${lang}/${bigRoute}/${cardVersion.docsDiv}`}>
                         {`  /${lang}/${bigRoute}/${cardVersion.docsDiv}`}
                     </Link>

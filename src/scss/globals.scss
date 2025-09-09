@@ -1,11 +1,12 @@
-@use "abstract/display" as display;
+@use "abstract/display";
 @use 'abstract/colors';
-@use "base/typo";
 @use "base/reset";
+@use "base/typo";
+@use "base/base";
+
 /* @use "components/mermaid"; */
 @use "layout/dual";
 @use "layout/table";
-@use "layout/article";
 @use "layout/sidebar";
 @use "layout/code";
 @use "page/home";
@@ -30,25 +31,32 @@ details{
     border-radius: 5px;
     margin-bottom: 1rem;
 }
-.top-right{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index : 3;
-}
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: pink;
-}
-.grid{
-    background: white;
-    width: 90vw;
-    max-width: 500px;
-    display: grid;
-    /* Chia nhiều cột khi đủ chỗ, thu hẹp thì dồn xuống dòng */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
 
-  gap: 1rem; /* Thêm khoảng cách giữa các item nếu muốn */
+
+.grid{
+  margin: 10px;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+    /* Chia nhiều cột khi đủ chỗ, thu hẹp thì dồn xuống dòng */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  justify-content: center; /* hoặc stretch */
+    gap: 1rem; /* Thêm khoảng cách giữa các item nếu muốn */
 }
+// .grid {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 1rem;
+//     margin: 10px
+//   }
+  
+.grid > * {
+    padding: 0 8px; /* khoảng cách giữa các item */
+    box-sizing: border-box;
+    width: 100%; /* hoặc calc-based */
+  }
+
+:root {
+    --content-font: var(--font-garamond);
+}
+

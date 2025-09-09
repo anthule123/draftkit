@@ -1,5 +1,5 @@
 
-import PanelLayout2 from "@/components/panelLayout2";
+import PanelLayout2 from "@/components/folderBased/panelLayout2";
 import { getContentTree } from "@/utils/folderBased/getContentTree";
 
 type LayoutProps = {
@@ -23,6 +23,7 @@ export default async function BlogLayout(
             <PanelLayout2
             tree = {tree}
            >{children} </PanelLayout2>
+         
         </div>
         
     )

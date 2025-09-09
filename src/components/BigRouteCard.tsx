@@ -1,4 +1,4 @@
-import ILink from "./ILink";
+import ILink from "./langSwitch/ILink";
 import style from '@/css/components/card.module.css';
 
 export function BigRouteCard(
@@ -10,6 +10,7 @@ export function BigRouteCard(
             <ILink href= {`${bigRoute}`}>
               <h3>{niceName}</h3>
             </ILink>
+            
         </div>
     )
 }

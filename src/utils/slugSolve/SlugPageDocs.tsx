@@ -1,5 +1,6 @@
-import style from '@/css/components/article.module.css';
+import style from '@/css/components/Article.module.css';
 import Article from '@/components/Article';
+import ArticleBook from '@/components/pdf/ArticleBook';
 
 export default async function SlugPageDocs({
     bigRoute,

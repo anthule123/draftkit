@@ -1,10 +1,12 @@
 
 
 .bigRouteCard{
-    height: 300px;
+    height: 200px;
     border: 1px solid green;
     box-shadow: 0 0 2px green;
+    background: white;
     h3{
         padding: 0 3rem ;
     }
+    max-width: 300px;
 }
